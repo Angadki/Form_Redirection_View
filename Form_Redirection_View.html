@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function redirectToForm() {
+            // Get the dropdown element
+            var dropdown = document.getElementById("Form_Type_Dropdown");
+
+            // Get the selected value
+            var selectedForm = dropdown.value;
+
+            // Define the form URLs
+            var formUrls = {
+                "Task_Form": "https://creatorapp.zoho.in/travelsiaraus/connex/#Form:Task_Form",
+                "Meeting_Form": "https://creatorapp.zoho.in/travelsiaraus/connex/#Form:Meeting_Form",
+                "Calls_Form": "https://creatorapp.zoho.in/travelsiaraus/connex/#Form:Calls_Form"
+            };
+
+            // Redirect to the corresponding form URL
+            if (formUrls[selectedForm]) {
+                window.location.href = formUrls[selectedForm];
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="Form_Type_Dropdown">Select Form:</label>
+        <select id="Form_Type_Dropdown" onchange="redirectToForm()">
+            <option value="">--Select Form--</option>
+            <option value="Task_Form">Task_Form</option>
+            <option value="Meeting_Form">Meeting_Form</option>
+            <option value="Calls_Form">Calls_Form</option>
+        </select>
+    </form>
+</body>
+</html>
